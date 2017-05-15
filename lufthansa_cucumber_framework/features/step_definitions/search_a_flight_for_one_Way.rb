@@ -2,9 +2,12 @@ Given(/^I login to lufthansa website using userid as "(.*?)" and password as "(.
   # This is for PIPELINE
   puts "User has been Logged in !!!"
 
-  # @luth = LoginPage.new
-  # @luth.load
-  # @luth.wait_until_fld_user_name_login_visible
+  @luth = LoginPage.new
+  @luth.load
+  @luth.wait_until_fld_user_name_login_visible
+  p "#{@luth.fld_user_name_login.text}"
+
+
   # @luth.fld_user_name_login.click
   # @luth.fld_user_id.set userid
   # @luth.fld_password.set password
