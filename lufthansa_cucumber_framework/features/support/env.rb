@@ -1,11 +1,11 @@
 require 'capybara'
 require 'site_prism'
 require 'rubygems'
-require 'tiny_tds'
+# require 'tiny_tds'
 require 'selenium-webdriver'
 require 'capybara/rspec/matchers'
 require 'capybara-screenshot/cucumber'
-require 'capybara/poltergeist' 
+# require 'capybara/poltergeist' 
 # We need this line only if we have poltergeist driver
 
 require_relative 'testdata.rb'
