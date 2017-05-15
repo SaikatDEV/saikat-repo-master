@@ -1,7 +1,7 @@
 require 'capybara'
 require 'site_prism'
 require 'rubygems'
-# require 'tiny_tds'
+require 'tiny_tds'
 require 'selenium-webdriver'
 require 'capybara/rspec/matchers'
 require 'capybara-screenshot/cucumber'
@@ -9,7 +9,7 @@ require 'capybara-screenshot/cucumber'
 # We need this line only if we have poltergeist driver
 
 require_relative 'testdata.rb'
-# require_relative 'testutil.rb'
+require_relative 'testutil.rb'
 
 Capybara.default_max_wait_time = DEFAULT_TIMEOUT
 
@@ -102,6 +102,7 @@ when 'poltergeist'
   end
 
 when 'phantomjs'
+  Selenium::WebDriver::PhantomJS.path = '/usr/local/bin/phantomjs.exe'
   Capybara.default_driver = :selenium
   Capybara.register_driver :selenium do |app|
     client = Selenium::WebDriver::Remote::Http::Default.new
