@@ -102,12 +102,12 @@ when 'poltergeist'
   end
 
 when 'phantomjs'
-  Selenium::WebDriver::PhantomJS.path = '/usr/local/bin/phantomjs.exe'
   Capybara.default_driver = :selenium
   Capybara.register_driver :selenium do |app|
     client = Selenium::WebDriver::Remote::Http::Default.new
     client.timeout = 300 # instead of the default 60
     bob =  Capybara::Selenium::Driver.new(app, :browser => :phantomjs, desired_capabilities: { 'phantomjs.cli.args' => ['--ignore-ssl-errors=yes'] }, :http_client => client)
+    bob.path = '/usr/local/bin/phantomjs.exe'
   end
 end	
 
