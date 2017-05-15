@@ -108,7 +108,7 @@ when 'phantomjs'
     client.timeout = 300 # instead of the default 60
     bob =  Capybara::Selenium::Driver.new(app, :browser => :phantomjs, desired_capabilities: { 'phantomjs.cli.args' => ['--ignore-ssl-errors=yes'] }, :http_client => client)
   end
-  Selenium::WebDriver::PhantomJS.path = '/usr/local/bin/phantomjs.exe'
+  Selenium::WebDriver::PhantomJS.path = '/usr/local/bin/phantomjs'
 end	
 
 # # This will run only once before all tests
