@@ -1,14 +1,17 @@
-class LandingPage < SitePrism::Page
+class LoginPage < SitePrism::Page
 
-  set_url "/create_account_success.php"
+  set_url "/"
 
   # *****************  All_Logo_Elements  ******************* #
 
   # *****************  All_Field_Elements  ******************* #
-  element :fld_logged_in_text, "table table table table p:nth-of-type(3)"
+  element :fld_register, ".mouseOut [href^='mercuryregister']"
+  element :fld_user_id, "#email"
+  element :fld_password, "[name='password']"
+  element :fld_conf_password, "[name='confirmPassword']"
 
   # *****************  All_Button_Elements  ******************* #
-
+  element :btn_submit, "[name='register']"
 
   # *****************  All_Drop_down_Elements  ******************* #
 
@@ -17,9 +20,7 @@ class LandingPage < SitePrism::Page
 
 
   # *****************  All_Links_Elements  ******************* #
-  element :lnk_home, "a[href*='welcome']"
-  element :lnk_flights, "a[href*='reservation']"
-  element :lnk_cruise, "a[href*='cruise']"
+
 
   # *****************  Local_Methods  *************#
 
