@@ -3,17 +3,15 @@ class LoginPage < SitePrism::Page
   set_url "/"
 
   # *****************  All_Logo_Elements  ******************* #
-  element :lgo_plane, ".li.li-plane"
 
   # *****************  All_Field_Elements  ******************* #
   element :fld_register, ".mouseOut [href^='mercuryregister']"
-  element :fld_user_id, "#lluserid"
-  element :fld_password, "#llpassword"
-  element :fld_user_name_login, "#header-profile-toggle"
+  element :fld_user_id, "#email"
+  element :fld_password, "[name='password']"
+  element :fld_conf_password, "[name='confirmPassword']"
 
   # *****************  All_Button_Elements  ******************* #
-  element :btn_login, "#ll-btn"
-  element :btn_submit_country, "#cl-form button"
+  element :btn_submit, "[name='register']"
 
   # *****************  All_Drop_down_Elements  ******************* #
   element :ddl_country, "#cl-country"
