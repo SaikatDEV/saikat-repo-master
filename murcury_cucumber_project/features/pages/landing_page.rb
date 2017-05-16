@@ -6,6 +6,7 @@ class LoginPage < SitePrism::Page
   element :lgo_plane, ".li.li-plane"
 
   # *****************  All_Field_Elements  ******************* #
+  element :fld_register, ".mouseOut [href^='mercuryregister']"
   element :fld_user_id, "#lluserid"
   element :fld_password, "#llpassword"
   element :fld_user_name_login, "#header-profile-toggle"

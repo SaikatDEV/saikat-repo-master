@@ -6,8 +6,9 @@ Feature: User can search a flight for one way trip
   I want to search flights for one way trip.
 
   @smoke
-  Scenario: Verify user can login and search for Flights
-    Given I login to lufthansa website using userid as "John001" and password as "Smith001"
+  Scenario: Verify user can register and login to the Mercury Application
+    Given Navigate to Mercury website 
+    # And Register using userid as "Mercury" and password as "password"
     # And I select country as "United States" from top toolbar panel
     # When I mouse hover on Flights and Deals option
     # And I click on Flight link from Deals panel

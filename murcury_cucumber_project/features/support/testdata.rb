@@ -1,10 +1,11 @@
 # *****************  Lufthansa TestData  ******************* #
-# Http://Newtours.Demoaut.Com/
-WEBSITE_URL ||= 'http://www.lufthansa.com/online/portal/lh/ua/homepage'
+
+WEBSITE_URL ||= 'http://Newtours.Demoaut.com'
 DEFAULT_TIMEOUT ||= 15
 BIG_TIMEOUT ||= 30
 MAX_TIMEOUT ||= 60
 
-USER_NAME ||= 'Prof. John Smith'
+USER_NAME ||= 'Mercury'
+PASSWORD ||= 'password'
 
 # *****************  Lufthansa TestData  ******************* #

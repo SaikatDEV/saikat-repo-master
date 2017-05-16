@@ -122,11 +122,11 @@ end
 #   $dunit = true                            # don't do it again.
 # end 
 
-# # This will run before each scenario
-# Before do |scenario|
-#   TestUtil.record_start_time
-#   Capybara.page.driver.browser.manage.window.resize_to(1280, 800)
-# end 
+# This will run before each scenario
+Before do |scenario|
+  TestUtil.record_start_time
+  Capybara.page.driver.browser.manage.window.resize_to(1280, 800)
+end 
 
 # # This will run after each scenario
 # After do |scenario|

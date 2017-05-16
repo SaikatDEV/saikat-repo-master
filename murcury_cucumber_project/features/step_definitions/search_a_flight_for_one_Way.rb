@@ -4,10 +4,10 @@ Given(/^I login to lufthansa website using userid as "(.*?)" and password as "(.
 
   @luth = LoginPage.new
   @luth.load
+  @luth.wait_until_fld_register_visible
   
-  p "#{@luth.url}"
+  p "#{@luth.fld_register.text}"
 
-  # @luth.wait_until_fld_user_name_login_visible
   # @luth.fld_user_name_login.click
   # @luth.fld_user_id.set userid
   # @luth.fld_password.set password
@@ -17,6 +17,17 @@ Given(/^I login to lufthansa website using userid as "(.*?)" and password as "(.
   # expect(@luth.fld_user_name_login.text).to include(USER_NAME)
 
   # puts execute_query_MSSQLSERVER("SELECT top 1 * FROM [Person].[Person]", "FirstName")
+end
+
+Given(/^Navigate to Mercury website$/) do
+  puts "User has been Logged in !!!"
+
+  @luth = LoginPage.new
+  @luth.load
+  # sleep(5)
+  @luth.wait_for_fld_register
+
+  p "Register Text: #{@luth.fld_register.text}"
 end
 
 Given(/^I select country as "([^"]*)" from top toolbar panel$/) do |country|
