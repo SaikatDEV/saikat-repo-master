@@ -40,3 +40,5 @@ Feature: User can search a flight for one way trip
     Given User is on the Landing Page
     When User click on Cruises link
     Then User is on the Cruise Page
+
+    
