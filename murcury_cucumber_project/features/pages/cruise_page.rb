@@ -1,12 +1,12 @@
-class LandingPage < SitePrism::Page
+class CruisePage < SitePrism::Page
 
-  set_url "/create_account_success.php"
+  set_url "/mercurycruise.php"
 
   # *****************  All_Logo_Elements  ******************* #
 
   # *****************  All_Field_Elements  ******************* #
-  element :fld_logged_in_text, "table table table table p:nth-of-type(3)"
-  element :fld_register_successful, "table table table table p:nth-of-type(2)"
+  element :fld_cruise_successful, "table [src*='cruise_special']"
+  element :fld_cruise_itinerary, ".style6"
 
   # *****************  All_Button_Elements  ******************* #
 

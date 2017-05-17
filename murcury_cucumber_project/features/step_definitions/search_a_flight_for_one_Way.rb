@@ -14,7 +14,7 @@ Given(/^Navigate to Mercury website$/) do
   expect(@luth.current_url.upcase).to include WEBSITE_URL.upcase
 end
 
-Given(/^I can register using userid as "([^"]*)" and password as "([^"]*)"$/) do |userid, password|
+Given(/^User register using userid as "([^"]*)" and password as "([^"]*)"$/) do |userid, password|
   @luth = LoginPage.new
   @luth.fld_register.click
   @luth.wait_for_btn_submit
@@ -28,5 +28,24 @@ p "Current URL: #{@luth.current_url}"
   @luth = LandingPage.new
   @luth.wait_for_fld_logged_in_text
   expect(@luth.fld_logged_in_text.text.upcase).to include USER_NAME.upcase
+end
+
+Then(/^User is on the Landing Page$/) do
+  @luth = LandingPage.new
+  @luth.wait_for_fld_register_successful
+  expect(@luth.fld_register_successful.text.upcase).to include REGISTER_SUCCESSFUL.upcase
+end
+
+When(/^User click on Cruises link$/) do
+  @luth = LandingPage.new
+  @luth.wait_for_lnk_cruise
+  expect(@luth).to have_lnk_cruise
+  @luth.lnk_cruise.click
+end
+
+Then(/^User is on the Cruise Page$/) do
+  @luth = CruisePage.new
+  @luth.wait_for_fld_cruise_successful
+  expect(@luth.fld_cruise_itinerary.text.upcase).to include "CRUISE"
 end
 

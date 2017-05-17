@@ -8,7 +8,12 @@ Feature: User can search a flight for one way trip
   @smoke
   Scenario: Verify user can register and login to the Mercury Application
     Given Navigate to Mercury website 
-    And I can register using userid as "Mercury" and password as "password"
+    When User register using userid as "Mercury" and password as "password"
+    Then User is on the Landing Page
 
-  # @regression
-  # Scenario: Verify user can login and search for Flights
+  @regression
+  Scenario: Verify user can search for Flights
+    Given User is on the Landing Page
+    When User click on Cruises link
+    Then User is on the Cruise Page
+
