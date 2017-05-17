@@ -17,3 +17,8 @@ Feature: User can search a flight for one way trip
     When User click on Cruises link
     Then User is on the Cruise Page
 
+  @regression
+  Scenario: Verify user can search for Flights
+    Given User is on the Landing Page
+    When User click on Cruises link
+    Then User is on the Cruise Page

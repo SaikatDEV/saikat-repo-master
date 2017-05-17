@@ -32,6 +32,7 @@ end
 
 Then(/^User is on the Landing Page$/) do
   @luth = LandingPage.new
+  @luth.load
   @luth.wait_for_fld_register_successful
   expect(@luth.fld_register_successful.text.upcase).to include REGISTER_SUCCESSFUL.upcase
 end
