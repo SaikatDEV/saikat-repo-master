@@ -11,6 +11,9 @@ require 'capybara-screenshot/cucumber'
 require_relative 'testdata.rb'
 require_relative 'testutil.rb'
 
+# This will print the Framework execution start time.
+TestUtil.print_framework_start_time
+
 Capybara.default_max_wait_time = DEFAULT_TIMEOUT
 
 Capybara.app_host = WEBSITE_URL
@@ -111,35 +114,24 @@ when 'phantomjs'
   Selenium::WebDriver::PhantomJS.path = '/usr/local/bin/phantomjs'
 end	
 
-# # This will run only once before all tests
-# Before do 
-#   p TestUtil.record_start_time
-#   $dunit ||= false  # have to define a variable before we can reference its value
-#   return $dunit if $dunit   # bail if $dunit TRUE
-  
-#   # otherwise do this below.
-#   $test_suite_start_time = TestUtil.record_start_time   
-#   $dunit = true                            # don't do it again.
-# end 
-
 # This will run before each scenario
 Before do |scenario|
-  TestUtil.record_start_time
+  TestUtil.record_start_time # This will record the Start Execution Time
   Capybara.page.driver.browser.manage.window.resize_to(1280, 800)
 end 
 
-# # This will run after each scenario
-# After do |scenario|
-#   TestUtil.record_end_time
-#   TestUtil.print_scenario_execution_time
+# This will run after each scenario
+After do |scenario|
+  TestUtil.record_end_time # This will record the End Execution Time
+  TestUtil.print_scenario_execution_time
 
-#   if scenario.failed?
-#     p 
-#     console_logs = Capybara.page.driver.browser.manage.logs.get("browser")
-#     p "Browser JS Console Logs:--***************-- #{console_logs.to_s}--***************--"
-#     # step 'log me out'
-#   end #if
-# end 
+  if scenario.failed?
+    p 
+    console_logs = Capybara.page.driver.browser.manage.logs.get("browser")
+    p "Browser JS Console Logs:--***************-- #{console_logs.to_s}--***************--"
+    # step 'log me out'
+  end #if
+end 
 
 # $logged_in = false
 # Before do |scenario|
@@ -156,10 +148,8 @@ end
 # end
 
 at_exit do
-
-  p "Test Suite Execution Start Time: #{$test_suite_start_time} secs"
-  # p "Test Suite Execution End Time: #{$test_suite_end_time} secs"
   TestUtil.print_framework_end_time
+
   Capybara.page.driver.quit
   # p 'Driver has been Killed As Test Suite execution is completed !!!'
 end
