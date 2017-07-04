@@ -137,10 +137,10 @@ end
 # Before do |scenario|
 #   Capybara.use_default_driver
 
-#   login_step=/^I am logged into AMAZON email as "(.*?)" with password "(.*?)" successfully$/
+#   login_step=/^User is logging into MERCURY where userid as "(.*?)" with password as "(.*?)" successfully$/
 
 #   if !$logged_in
-#     step 'I am logged into AMAZON email as "subash.dutt.b@gmail.com" with password "Welcome001" successfully'
+#     step 'User is logging into MERCURY where userid as "mercury" with password as "password" successfully'
 
 #   elsif $logged_in
 #     p 'Do not log in as user is already logged in !!!'

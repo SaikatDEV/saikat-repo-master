@@ -19,6 +19,7 @@ class LoginPage < SitePrism::Page
   # *****************  All_Check_Boxes_Elements  ******************* #
 
 
+
   # *****************  All_Links_Elements  ******************* #
 
 
