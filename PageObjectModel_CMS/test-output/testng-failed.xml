@@ -1,21 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [FACEBOOK Suite]">
-  <test name="Login Test(failed)">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test name="Default test(failed)">
     <classes>
-      <class name="com.selenium.facebook.pom.testcases.ChangePasswordTest">
+      <class name="com.selenium.cms.pom.testcases.LoginTest">
         <methods>
-          <include name="quitReport"/>
           <include name="cleanup"/>
           <include name="teardown"/>
-        </methods>
-      </class> <!-- com.selenium.facebook.pom.testcases.ChangePasswordTest -->
-      <class name="com.selenium.facebook.pom.testcases.LoginTest">
-        <methods>
           <include name="quitReport"/>
           <include name="test_1"/>
         </methods>
-      </class> <!-- com.selenium.facebook.pom.testcases.LoginTest -->
+      </class> <!-- com.selenium.cms.pom.testcases.LoginTest -->
     </classes>
-  </test> <!-- Login Test(failed) -->
-</suite> <!-- Failed suite [FACEBOOK Suite] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

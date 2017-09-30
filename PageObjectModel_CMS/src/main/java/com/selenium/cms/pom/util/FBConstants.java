@@ -7,7 +7,7 @@ public class FBConstants{
 	
 //	Paths
 //	In Windows, it can be like this: F:\\chromedriver\\chromedriver.exe
-	public static final String CHROME_DRIVER_EXE = System.getProperty("user.dir") + "/chromedriver/chromedriver";
+	public static final String CHROME_DRIVER_EXE = System.getProperty("user.dir") + "/chromedriver/chromedriver.exe";
 	public static final String REPORT_PATH = System.getProperty("user.dir") + "/reports/";
 	public static final String SCREENSHOT_PATH = System.getProperty("user.dir") + "/screenshots/";
 	public static final String REPORTS_CONFIG_PATH = System.getProperty("user.dir") + "/ReportsConfig.xml";
