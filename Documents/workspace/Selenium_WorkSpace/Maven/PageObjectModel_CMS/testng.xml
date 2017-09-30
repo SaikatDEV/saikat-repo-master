@@ -1,0 +1,17 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="CMS Suite">
+
+	<test name="Login Test">
+    	<classes>
+        	<class name="com.selenium.cms.pom.testcases.LoginTest" ></class>  
+    	</classes>
+	</test>
+
+	<test name="Change Password Test">
+    	<classes>
+        	<class name="com.selenium.cms.pom.testcases.ChangePasswordTest" ></class>  
+    	</classes>
+	</test>
+
+
+</suite>
